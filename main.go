@@ -28,8 +28,8 @@ const (
 	// color = "red"
 	// color = "orange"
 	// color = "yellow"
-	color = "green"
-	// color = "blue"
+	// color = "green"
+	color = "blue"
 	// color = "purple"
 )
 
