@@ -1,9 +1,8 @@
-FROM golang:1.23 as build
+FROM golang:1.24 as build
 WORKDIR /go/src/app
-COPY main.go .
-RUN go mod init github.com/osoriano/rollouts-demo && \
+COPY main.go go.mod .
+RUN go vet && \
   [ -z "$(go fmt)" ] && \
-  go vet && \
   CGO_ENABLED=0 go build
 
 FROM scratch

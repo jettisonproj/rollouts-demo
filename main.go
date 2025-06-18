@@ -43,7 +43,7 @@ func main() {
 	flag.Parse()
 
 	router := http.NewServeMux()
-	router.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./"))))
+	router.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./static"))))
 	router.HandleFunc("/color", getColor)
 
 	server := &http.Server{
@@ -94,8 +94,8 @@ func getColor(w http.ResponseWriter, r *http.Request) {
 	requestBody, err := io.ReadAll(r.Body)
 	if err != nil {
 		w.WriteHeader(500)
-		log.Println(err.Error())
-		fmt.Fprintf(w, err.Error())
+		log.Printf("Error reading request body: %s", err.Error())
+		fmt.Fprintf(w, "Error reading request body: %s", err.Error())
 		return
 	}
 
@@ -104,8 +104,8 @@ func getColor(w http.ResponseWriter, r *http.Request) {
 		err = json.Unmarshal(requestBody, &request)
 		if err != nil {
 			w.WriteHeader(500)
-			log.Printf("%s: %v", string(requestBody), err.Error())
-			fmt.Fprintf(w, err.Error())
+			log.Printf("Error parsing request body %s: %v", string(requestBody), err.Error())
+			fmt.Fprintf(w, "Error parsing request body: %v", err.Error())
 			return
 		}
 	}
