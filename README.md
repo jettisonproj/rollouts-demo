@@ -35,23 +35,23 @@ go vet
 ## Building the Image
 
 ```
-docker build -t osoriano/rollouts-demo .
+docker build -t jettisonproj/rollouts-demo .
 ```
 
 ## Running the Image
 
 ```
-docker run --rm -it -p 8080:8080 osoriano/rollouts-demo
+docker run --rm -it -p 8080:8080 jettisonproj/rollouts-demo
 ```
 
 ## Building the Integration Test
 
 ```
-docker build -t osoriano/rollouts-demo-integration-test --target integration-test .
+docker build -t jettisonproj/rollouts-demo-integration-test --target integration-test .
 ```
 
 ## Running the Integration Test
 
 ```
-docker run --rm -it --net host osoriano/rollouts-demo-integration-test ./integration-test.sh http://localhost:8080
+docker run --rm -it --net host jettisonproj/rollouts-demo-integration-test ./integration-test.sh http://localhost:8080
 ```

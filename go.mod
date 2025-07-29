@@ -1,3 +1,3 @@
-module github.com/osoriano/rollouts-demo
+module github.com/jettisonproj/rollouts-demo
 
 go 1.24.1
