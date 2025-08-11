@@ -27,8 +27,8 @@ const (
 	// Choose from one of the following colors:
 	// color = "red"
 	// color = "orange"
-	color = "yellow"
-	// color = "green"
+	// color = "yellow"
+	color = "green"
 	// color = "blue"
 	// color = "purple"
 )
