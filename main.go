@@ -25,8 +25,8 @@ const (
 	defaultTerminationDelay = 10
 
 	// Choose from one of the following colors:
-	color = "red"
-	// color = "orange"
+	// color = "red"
+	color = "orange"
 	// color = "yellow"
 	// color = "green"
 	// color = "blue"
